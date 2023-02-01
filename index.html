@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </meta>
+    <meta charset="utf-8">
+    </meta>
+    <link id="css" rel="preload"
+        href="https://fonts.gstatic.com/s/firacode/v21/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_D1sJVD7MOzlojwUKQ.woff"
+        as="font" type="font/woff2" crossorigin>
+    </link>
+    <link id="css" rel="stylesheet" type="text/css" href="https://scorchchamp.github.io/style.css" media="all">
+    </link>
+    <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5779624385801311"
+        crossorigin="anonymous" async></script>
+    <script src="https://scorchchamp.github.io/auto-format.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <script>
+        function toggleBathroom() {
+            document.getElementById("bathroom-light").style.display = document.getElementById("bathroom").checked ? "block" : "none";
+        }
+        function toggleLivingroom() {
+            document.getElementById("livingroom-light").style.display = document.getElementById("livingroom").checked ? "block" : "none";
+        }
+        function changeSun() {
+            var sun = document.getElementById("main-floor-sun");
+            var slider = document.getElementById("daylight");
+            var value = slider.value;
+            sun.style.opacity = value / 100;
+        }
+    </script>
+    <label for="daylight">Daylight</label>
+    <input type="range" min="0" max="100" value="100" class="slider" id="daylight" onchange="changeSun()">
+    <label for="daylight">Lamp living room</label>
+    <input type="checkbox" id="livingroom" onclick="toggleLivingroom()" checked/>
+    <label for="daylight">Lamp bathroom</label>
+    <input type="checkbox" id="bathroom" onclick="toggleBathroom()" checked/>
+
+    <div class="main-container">
+        <div class="root">
+            <div class="main-floor">
+                <img src="./floorplan_night.png" alt="main-floorplan-night">
+            </div>
+            <div class="main-floor">
+                <img src="./floorplan_day.png" alt="main-floorplan-day" id="main-floor-sun">
+            </div>
+            <div class="floor-element">
+                <img src="./lights/bathroom.png" alt="Bathroom-light" id="bathroom-light">
+            </div>
+            <div class="floor-element">
+                <img src="./lights/main_living_room.png" alt="main-living-room-light" id="livingroom-light">
+            </div>
+        </div>
+    </div>
+</body>
